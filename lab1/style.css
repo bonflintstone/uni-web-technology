@@ -1,9 +1,22 @@
 body {
-  padding: 50px 100px 50px 100px;
+  padding: 182px 100px 50px 100px;
   text-align: justify;
   background-color: #819A9A;
   font-family: "Comic Sans MS", arial;
   font-size: 100%;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  right: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 20px 0;
+  background-color: #D7ECEC;
+  border-radius: 5px;
+  text-align: center;
+
 }
 
 a {
@@ -45,7 +58,7 @@ section {
   border-spacing: 5px;
   margin-bottom: 10px;
   background-color: #ACD0D0;
-  padding: 30px;
+  padding: 60px 20px;
 }
 
 h1, h2, h3 {
