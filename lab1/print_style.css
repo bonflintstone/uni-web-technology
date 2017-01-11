@@ -1,0 +1,73 @@
+body {
+  padding: 50px 100px;
+  background-color: white;
+  font-family: "Comic Sans MS", arial;
+  font-size: 100%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+nav {
+  display:none;
+}
+
+a {
+  text-align: center;
+}
+
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+a:hover {
+    color: #FF00FF;
+}
+
+a:active {
+    color: #0000FF;
+}
+caption {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 40%;
+  filter:grayscale(100%);
+}
+
+section {
+  border: 3px solid black;
+  border-radius: 10px;
+  border-spacing: 5px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 60px 20px;
+}
+
+h1, h2, h3 {
+  color: black;
+  font-weight:bold;
+}
+
+h2 {
+  text-indent: 10px;
+}
+figcaption{
+  text-align: center;
+}
+
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+th {
+  text-align: center;
+}
