@@ -1,15 +1,35 @@
 body {
   padding: 50px 100px 50px 100px;
   text-align: justify;
-  background-color: #f1f1f1;
+  background-color: #819A9A;
+  font-family: "Comic Sans MS", arial;
+  font-size: 100%;
 }
 
 a {
   text-align: center;
 }
 
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
 a:hover {
-  text-decoration: underline;
+    color: #FF00FF;
+}
+
+a:active {
+    color: #0000FF;
+}
+caption {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
 }
 
 img {
@@ -20,12 +40,16 @@ img {
 }
 
 section {
-  border: 1px solid black;
-  margin-bottom: 5px;
+  border: 1px solid #4C6A6A;
+  border-radius: 10px;
+  border-spacing: 5px;
+  margin-bottom: 10px;
+  background-color: #ACD0D0;
+  padding: 30px;
 }
 
 h1, h2, h3 {
-  color: blue;
+  color: #002A2A;
   font-weight:bold;
 }
 
@@ -34,5 +58,12 @@ h2 {
 }
 figcaption{
   text-align: center;
+}
 
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+th {
+  text-align: center;
 }
