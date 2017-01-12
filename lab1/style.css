@@ -2,8 +2,9 @@ body {
   padding: 182px 100px 50px 100px;
   text-align: justify;
   background-color: #819A9A;
-  font-family: "Comic Sans MS", arial;
   font-size: 100%;
+  font-family: "Comic Sans MS", arial;
+
 }
 nav {
   position: fixed;
@@ -69,7 +70,8 @@ h1, h2, h3 {
 h2 {
   text-indent: 10px;
 }
-figcaption{
+
+figcaption {
   text-align: center;
 }
 
@@ -77,6 +79,29 @@ ul {
   list-style-type: circle;
   list-style-position: inside;
 }
+
 th {
   text-align: center;
+}
+
+.float-right {
+  float: right;
+
+}
+
+.float-left {
+  float: left;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+head, body, nav;  {
+  flex: 1 100%;
+}
+
+@media all and (min-width: 800px) {
+  body { flex: 2 0px; }
 }
