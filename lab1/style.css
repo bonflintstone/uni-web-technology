@@ -4,8 +4,8 @@ body {
   background-color: #819A9A;
   font-size: 100%;
   font-family: "Comic Sans MS", arial;
-
 }
+
 nav {
   position: fixed;
   width: 100%;
@@ -13,37 +13,37 @@ nav {
   left: 0;
   top: 0;
   z-index: 1;
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: #D7ECEC;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-
 }
 
 .center {
   text-align: center;
 }
 
-a:link {
-    color: #000000;
-}
-
-a:visited {
-    color: #000000;
+a:link, a:visited {
+  color: black;
 }
 
 a:hover {
-    color: #FF00FF;
+  color: #FF00FF;
 }
 
 a:active {
-    color: #0000FF;
+  color: #0000FF;
 }
+
 caption {
   margin-bottom: 15px;
-  font-size: rem;
+  font-size: 1rem;
   font-weight: bold;
   font-style: italic;
+}
+
+figure {
+  margin: 0 auto 20px
 }
 
 img {
@@ -60,6 +60,7 @@ section {
   margin-bottom: 10px;
   background-color: #ACD0D0;
   padding: 60px 20px;
+  width: 100%
 }
 
 h1, h2, h3 {
@@ -77,21 +78,26 @@ figcaption {
 
 ul {
   list-style-type: circle;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 th {
   text-align: center;
 }
 
-.float-right {
-  float: right;
-  /n
-
+.items {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.float-left {
-  float: left;
+.items > div {
+  flex: 0 0 50%;
+}
+
+@media(max-width: 800px) {
+  .items > div {
+    flex: 0 0 100%;
+  }
 }
 
 .wrapper {
@@ -104,5 +110,20 @@ head, body, nav;  {
 }
 
 @media all and (min-width: 800px) {
-  body { flex: 2 0px; }
+  body {
+    flex: 2 0;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+input, select {
+  width: calc(100% - 5px);
 }
