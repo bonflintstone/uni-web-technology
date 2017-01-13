@@ -1,5 +1,5 @@
 body {
-  padding: 182px 100px 50px 100px;
+  padding: 182px 100px 50px;
   text-align: justify;
   background-color: #819A9A;
   font-size: 100%;
@@ -15,12 +15,12 @@ nav {
   z-index: 1;
   padding: 20px 0;
   background-color: #D7ECEC;
-  border-radius: 5px;
-  text-align: center;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 
 }
 
-a {
+.center {
   text-align: center;
 }
 
@@ -41,8 +41,8 @@ a:active {
 }
 caption {
   margin-bottom: 15px;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: rem;
+  font-weight: bold;
   font-style: italic;
 }
 
@@ -86,6 +86,7 @@ th {
 
 .float-right {
   float: right;
+  /n
 
 }
 
