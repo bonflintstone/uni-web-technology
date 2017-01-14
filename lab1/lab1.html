@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lab 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body class="wrapper">
+    <nav>
+      <span class="title">CS 93</span>
+      <a href='#questions'>Questions</a>
+      <a href='lab2.html'>Lab 2</a>
+    </nav>
+    <figure>
+      <div class="header-img">
+        <img class="center desaturate" src= "https://juststickers.in/wp-content/uploads/2016/05/i-love-html-badge.png">
+      </div>
+      <figcaption>
+        <em>We love<strong> HTML</strong></em>
+      </figcaption>
+    </figure>
+    <section id='product_table'>
+      <h1>First things first.</h1>
+      <table>
+        <caption>Product Table</caption>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Location</th>
+          <th>Purchase Date</th>
+        </tr>
+        <tr>
+          <td>Helicent Uffering</td>
+          <td>Warrior</td>
+          <td>5</td>
+          <td>Volantis</td>
+          <td>2017-01-07</td>
+        </tr>
+        <tr>
+          <td>Baelor Blacktyde</td>
+          <td>Warrior</td>
+          <td>16</td>
+          <td>Chroyane</td>
+          <td>2017-01-04</td>
+        </tr>
+        <tr>
+          <td>Addison Hill</td>
+          <td>Royal</td>
+          <td>70</td>
+          <td>Meereen</td>
+          <td>2017-01-09</td>
+        </tr>
+        <tr>
+          <td>Elmar Frey</td>
+          <td>Freelancer</td>
+          <td>61</td>
+          <td>Tolos</td>
+          <td>2017-01-09</td>
+        </tr>
+        <tr>
+          <td>Rhaegar Targaryen</td>
+          <td>King</td>
+          <td>5</td>
+          <td>Qohor</td>
+          <td>2017-01-06</td>
+        </tr>
+        <tr>
+          <td>Ocley</td>
+          <td>Royal</td>
+          <td>76</td>
+          <td>White Harbor</td>
+          <td>2017-01-10</td>
+        </tr>
+        <tr>
+          <td>Hibald</td>
+          <td>King</td>
+          <td>37</td>
+          <td>New Ghis</td>
+          <td>2017-01-07</td>
+        </tr>
+        <tr>
+          <td>Alesander Torrent</td>
+          <td>King</td>
+          <td>73</td>
+          <td>New Ghis</td>
+          <td>2017-01-04</td>
+        </tr>
+        <tr>
+          <td>Daenerys Targaryen</td>
+          <td>Freelancer</td>
+          <td>13</td>
+          <td>Oldtown</td>
+          <td>2017-01-09</td>
+        </tr>
+        <tr>
+          <td>Lyonel</td>
+          <td>Freelancer</td>
+          <td>78</td>
+          <td>Asshai</td>
+          <td>2017-01-09</td>
+        </tr>
+        <tr>
+          <td>Harren Botley</td>
+          <td>Freelancer</td>
+          <td>46</td>
+          <td>Vaes Dothrak</td>
+          <td>2017-01-10</td>
+        </tr>
+        <tr>
+          <td>Lucas Codd</td>
+          <td>King</td>
+          <td>85</td>
+          <td>Qohor</td>
+          <td>2017-01-09</td>
+        </tr>
+        <tr>
+          <td>Sarya Whent</td>
+          <td>Royal</td>
+          <td>5</td>
+          <td>Asshai</td>
+          <td>2017-01-10</td>
+        </tr>
+        <tr>
+          <td>Gyldayn</td>
+          <td>Freelancer</td>
+          <td>43</td>
+          <td>King's Landing</td>
+          <td>2017-01-08</td>
+        </tr>
+        <tr>
+          <td>Harmond Umber</td>
+          <td>Royal</td>
+          <td>28</td>
+          <td>Norvos</td>
+          <td>2017-01-08</td>
+        </tr>
+        <tr>
+          <td>Helman Tallhart</td>
+          <td>Royal</td>
+          <td>29</td>
+          <td>White Harbor</td>
+          <td>2017-01-07</td>
+        </tr>
+        <tr>
+          <td>Sybelle Glover</td>
+          <td>Freelancer</td>
+          <td>17</td>
+          <td>Chroyane</td>
+          <td>2017-01-10</td>
+        </tr>
+        <tr>
+          <td>Selyse Florent</td>
+          <td>Royal</td>
+          <td>13</td>
+          <td>Ar Noy</td>
+          <td>2017-01-11</td>
+        </tr>
+        <tr>
+          <td>Rhaenys Targaryen</td>
+          <td>Freelancer</td>
+          <td>75</td>
+          <td>Sunspear</td>
+          <td>2017-01-05</td>
+        </tr>
+        <tr>
+          <td>Willis Wode</td>
+          <td>Royal</td>
+          <td>62</td>
+          <td>Asshai</td>
+          <td>2017-01-11</td>
+        </tr>
+        <form action='http://wt.ops.few.vu.nl/api/5a58ddb5' method='post'>
+          <tr>
+            <td>
+              <input name='name' placeholder='Name' type='text'>
+            </td>
+            <td>
+              <select name='category'>
+                <option value='Royal'>Royal</option>
+                <option value='Freelancer'>Freelancer</option>
+                <option value='Warrior'>Warrior</option>
+                <option value='King'>King</option>
+              </select>
+            </td>
+            <td>
+              <input min='1' name='amount' type='number' value='1'>
+            </td>
+            <td>
+              <input name='location' placeholder='Location' type='text'>
+            </td>
+            <td>
+              <input name='date' placeholder='Purchase Date' type='date' value='2017-01-11'>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type='submit'>
+            </td>
+          </tr>
+        </form>
+      </table>
+    </section>
+    <h1 id='questions'>Questions</h1>
+    <section id='question1'>
+      <h2>Question 1</h2>
+      <div>
+        <div class="right text-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/W3C%C2%AE_Icon.svg/1280px-W3C%C2%AE_Icon.svg.png" alt="w3c">
+        </div>
+        <dl>
+          <dt>W3C Recommendations</dt>
+          <dd>Focussed on accessibility</dd>
+          <dd>Improving existing technology to include more groups of people</dd>
+          <dd>Wanted to create XHTML2</dd>
+        </dl>
+      </div>
+      <div>
+        <div class="right text-img">
+          <img src="https://images.whatwg.org/logo.svg" alt="whatwg">
+        </div>
+        <dl>
+          <dt>WHATWG Recommendations</dt>
+          <dd>Define a new version of HTML</dd>
+          <dd>Standarizing the improvements made by different web browsers</dd>
+          <dd>Focussing on the needs of real world users</dd>
+          <dd>Maing the web an "operating system"</dd>
+        </dl>
+      </div>
+    </section>
+    <section id='question2'>
+      <h2>Question 2</h2>
+      <p>The web is the part of the internet that web browsers and web services make use of, defined by http/ html/ ajax etc.</p>
+      <p>The Internet includes the web, but also many other technologies like ftp, ssh, email etc.</p>
+      <a href='http://www.webopedia.com/DidYouKnow/Internet/Web_vs_Internet.asp'>Source: Webopedia</a>
+    </section>
+    <section id='question3'>
+      <h2>Question 3</h2>
+      Time Berners-Lee mainly created the following 3 technologies for the web:
+      <ul>
+        <li>HTTP</li>
+        <li>HTML</li>
+        <li>URI</li>
+      </ul>
+    </section>
+    <section id='question4'>
+      <h2>Question 4</h2>
+      <p>
+        The html generated by the document already contains the whole basic html structure and doctype, as well as some metadata hinting at where it comes from and when it was created. It also contains some basic style in the head and has inline style for the generated p element which wraps the text.
+        <br />
+        Striking here is that the distance measure used here is cm (centimeters), instead of the usually used px or em, but elsewise the file does not yield anything special.
+      </p>
+    </section>
+    <section id='question5'>
+      <h2>Question 5</h2>
+      <table id='protocolTable'>
+        <tr>
+          <th>Protocol</th>
+          <th>Port</th>
+          <th>Description</th>
+          <th>Authorative Source</th>
+        </tr>
+        <tr>
+          <td>HTTP</td>
+          <td>80</td>
+          <td>HTTP is a ASCII application layer protocol, mainly build for use by HTML, but also used for many other applications. HTTP is stateless, includes status codes, authentification and different HTTP 'verbs'</td>
+          <td>
+            <a href='https://www.w3.org/Protocols/Specs.html'>W3C</a>
+            is the authorative source here because HTTP was first defined in a
+            <abbr title='Request For Commons'>RFC</abbr>
+            by W3C and is still maintained by them.
+          </td>
+        </tr>
+        <tr>
+          <td>SSH</td>
+          <td>22</td>
+          <td>SSH is a security protocol running on top of TCP usually used for remotely logging in on a different system</td>
+          <td>
+            <a href='https://tools.ietf.org/html/rfc4253'>IETF</a>
+            is the authorative source here because  was first defined in a
+            <abbr title='Request For Commons'>RFC</abbr>
+            by W3C and is still maintained by them.
+          </td>
+        </tr>
+        <tr>
+          <td>FTP</td>
+          <td>20, 21</td>
+          <td>FTP is a standard file transfer protocol used between a web client and server.</td>
+          <td>
+            <a href='https://www.w3.org/Protocols/Specs.html'>W3C</a>
+            is the authorative source here because HTTP was first defined in a
+            <abbr title='Request For Commons'>RFC</abbr>
+            by W3C and is still maintained by them.
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section id='question6'>
+      <h2>Question 6</h2>
+      <dl>
+        <dt>&lt;strong></dt>
+        <dd>Markup describing the meaning of the content, instead of the style.</dd>
+        <dd>Usable for accessibility as well.</dd>
+        <dd>To be interpreted by whatever.</dd>
+        <dt>&lt;b></dt>
+        <dd>Markup describing the style of the content, instead of the meaning.</dd>
+        <dd>Usable for accessibility as well.</dd>
+        <dd>Singe purpose, usecase only in browsers.</dd>
+      </dl>
+    </section>
+    <section id='question7'>
+      <h2>Question 7</h2>
+      <p>
+        They are both used to group content; however, span is an inline element; whereas, div is a block element.
+      </p>
+    </section>
+    <section id='question8'>
+      <h2>Question 8</h2>
+      <h3>Benefits of IFrames</h3>
+      <ul>
+        <li>IFrames circumvent the cross domain origin policy</li>
+        <li>Uselful to have mutliple different sources for the page</li>
+        <li>Security for using 3rd party content, as the iframe is basically sandboxed (javascript/ styling etc can only affect things inside the iframe)</li>
+      </ul>
+      <h3>Downsides of IFrames</h3>
+      <ul>
+        <li>Hard to style right</li>
+        <li>The content in iframes is not good for search engines to index</li>
+        <li>Making it easy to change the page without messing with the url</li>
+        <li>Can be used to update dynamically load the page without ajax</li>
+      </ul>
+      <p>
+      </p>
+    </section>
+    <section id='question9'>
+      <h2>Question 9</h2>
+        <ol>
+          <li>Easy to maintain and update</li>
+          <li>Great consistency in design</li>
+          <li>More formatting options</li>
+          <li>Lightweight code</li>
+          <li>Small file sizes</li>
+          <li>Ease of presenting different styles to different viewers</li>
+          <li>Great accessibility</li>
+      </ol>
+    </section>
+    <section id='question10'>
+      <h2>Question 10</h2>
+      <p>
+        Either it gets emphasised in another way, or it just stays the same. My assumption is that it does not further emphazise it and the text just stays italics, as this is the normal behavior for doubled styling. Lets try it out:
+      </p>
+      <p style='font-style: italic;'>Normal italics <em>also emphazised</em></p>
+      <p>So it looks exactly the same. No surprise there.</p>
+    </section>
+    <section id='question11'>
+      <h2>Question 11</h2>
+      <p>
+        I will compare Chrome with Firefox, as those are the two browsers most familiar to me.
+        <br />
+        I also will only look at the current versions of the browsers and not dive into the history of them.
+      </p>
+      <div>
+        <h3>Firefox</h3>
+        <ul class= "float-left">
+          <li>High configurability</li>
+          <li>Many features for advanced users (tab groups/ reading mode)</li>
+          <li>Slightly slower, but better in resources</li>
+          <li>Open source</li>
+          <li>Non commercialiced, better for privacy</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Chrome</h3>
+        <ul class="float-right">
+          <li>Ease of use</li>
+          <li>Simplicity</li>
+          <li>Slightly faster, but worse in resources</li>
+          <li>Owned by google, one of the biggets collectors of personal data</li>
+          <li>Closed source</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

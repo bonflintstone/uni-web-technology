@@ -1,5 +1,5 @@
 body {
-  padding: 182px 100px 50px;
+  padding: 100px 5% 50px;
   text-align: justify;
   background-color: #819A9A;
   font-size: 100%;
@@ -8,19 +8,34 @@ body {
 
 nav {
   position: fixed;
-  width: 100%;
-  right: 100%;
   left: 0;
   top: 0;
+  width: 100%;
   z-index: 1;
-  padding: 10px 0;
   background-color: #D7ECEC;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  padding: 25px 5%;
+}
+
+nav a {
+  font-size: 1.4em;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
 .center {
   text-align: center;
+}
+
+.title {
+  font-size: 1.6em;
+  font-style: italic;
+  border: 3px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: white;
+  margin-right: 20px;
 }
 
 a:link, a:visited {
@@ -43,14 +58,25 @@ caption {
 }
 
 figure {
-  margin: 0 auto 20px
+  width: 100%;
+}
+
+.header-img {
+  margin: 0 auto;
+  width: 40%;
+  max-width: 250px;
+  filter: grayscale(100%);
+}
+
+.text-img {
+  margin: 10px;
+  width: 100px;
+  height: 50px;
 }
 
 img {
-  display: block;
-  margin: auto;
-  width: 40%;
-  filter:grayscale(100%);
+  width: 100%;
+  max-height: 100%;
 }
 
 section {
@@ -60,7 +86,7 @@ section {
   margin-bottom: 10px;
   background-color: #ACD0D0;
   padding: 60px 20px;
-  width: 100%
+  width: 100%;
 }
 
 h1, h2, h3 {
@@ -105,16 +131,6 @@ th {
   flex-flow: row wrap;
 }
 
-head, body, nav;  {
-  flex: 1 100%;
-}
-
-@media all and (min-width: 800px) {
-  body {
-    flex: 2 0;
-  }
-}
-
 table {
   width: 100%;
 }
@@ -126,4 +142,17 @@ td, th {
 
 input, select {
   width: calc(100% - 5px);
+}
+
+.right {
+  float: right;
+}
+
+@media(max-width: 750px) {
+  td, th {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 20px;
+  }
 }
