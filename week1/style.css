@@ -63,8 +63,7 @@ figure {
 
 .header-img {
   margin: 0 auto;
-  width: 40%;
-  max-width: 250px;
+  width: 250px;
   filter: grayscale(100%);
 }
 
