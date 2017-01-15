@@ -1,7 +1,7 @@
 body {
   padding: 50px 100px;
   background-color: white;
-  font-family: "Comic Sans MS", arial;
+  font: arial;
   font-size: 100%;
   text-align: justify;
   text-justify: inter-word;
@@ -27,12 +27,19 @@ a:active {
   color: #0000FF;
 }
 
+p {
+  orphans: 3;
+  widows: 3;
+}
+
 caption {
   margin-bottom: 15px;
+  margin-top: 5px;
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
   caption-side: top;
+  page-break-after: avoid;
 }
 
 img {
@@ -40,7 +47,6 @@ img {
   margin: auto;
   width: 40%;
   filter: grayscale(100%);
-
 }
 
 section {
@@ -48,8 +54,9 @@ section {
   border-radius: 10px;
   border-spacing: 5px;
   margin-bottom: 10px;
-  background-color: white;
+  background: white;
   padding: 60px 20px;
+  page-break-before: auto;
 }
 
 h1, h2, h3 {
@@ -60,17 +67,21 @@ h1, h2, h3 {
 h2 {
   text-indent: 10px;
 }
+
 figcaption{
   text-align: center;
 }
 
 ul {
-  list-style-type: circle;
-  list-style-position: inside;
+  list-style: circle inside;
 }
 
 table {
   width: 100%;
+}
+
+tr:nth-last-child(-n + 2) {
+  display: none;
 }
 
 .right {
@@ -79,8 +90,4 @@ table {
 
 .text-img {
   width: 150px;
-}
-
-.page-break {
-  page-break-before: auto;;
 }
