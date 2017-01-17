@@ -118,6 +118,10 @@ th {
   font-variant: small-caps;
 }
 
+#product-table th {
+  cursor: pointer;
+}
+
 .items {
   display: flex;
   flex-wrap: wrap;

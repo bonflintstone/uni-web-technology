@@ -4,10 +4,9 @@
   <head>
     <title>Lab 1</title>
     <link rel="stylesheet" type="text/css" href="screen.css">
-    <meta charset="urf-8"/>
+    <meta charset="utf-8"/>
   </head>
   <body class="wrapper change">
-    <script type="text/javascript" src="sorttable.js"></script>
     <nav>
       <span class="title">CS 93</span>
       <a href='#questions'>Questions</a>
@@ -31,185 +30,189 @@
       <p>-Frederik & Niklas </p>
       </figcaption>
     </figure>
-    <section id='product_table'>
+    <section id='product-table'>
       <h1>First things first.</h1>
       <form action='http://wt.ops.few.vu.nl/api/5a58ddb5' method='post'>
         <table class="sortable">
           <caption>Product Table</caption>
-          <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Location</th>
-            <th>Purchase Date</th>
-          </tr>
-          <tr>
-            <td>Helicent Uffering</td>
-            <td>Warrior</td>
-            <td>5</td>
-            <td>Volantis</td>
-            <td>2017-01-07</td>
-          </tr>
-          <tr>
-            <td>Baelor Blacktyde</td>
-            <td>Warrior</td>
-            <td>16</td>
-            <td>Chroyane</td>
-            <td>2017-01-04</td>
-          </tr>
-          <tr>
-            <td>Addison Hill</td>
-            <td>Royal</td>
-            <td>70</td>
-            <td>Meereen</td>
-            <td>2017-01-09</td>
-          </tr>
-          <tr>
-            <td>Elmar Frey</td>
-            <td>Freelancer</td>
-            <td>61</td>
-            <td>Tolos</td>
-            <td>2017-01-09</td>
-          </tr>
-          <tr>
-            <td>Rhaegar Targaryen</td>
-            <td>King</td>
-            <td>5</td>
-            <td>Qohor</td>
-            <td>2017-01-06</td>
-          </tr>
-          <tr>
-            <td>Ocley</td>
-            <td>Royal</td>
-            <td>76</td>
-            <td>White Harbor</td>
-            <td>2017-01-10</td>
-          </tr>
-          <tr>
-            <td>Hibald</td>
-            <td>King</td>
-            <td>37</td>
-            <td>New Ghis</td>
-            <td>2017-01-07</td>
-          </tr>
-          <tr>
-            <td>Alesander Torrent</td>
-            <td>King</td>
-            <td>73</td>
-            <td>New Ghis</td>
-            <td>2017-01-04</td>
-          </tr>
-          <tr>
-            <td>Daenerys Targaryen</td>
-            <td>Freelancer</td>
-            <td>13</td>
-            <td>Oldtown</td>
-            <td>2017-01-09</td>
-          </tr>
-          <tr>
-            <td>Lyonel</td>
-            <td>Freelancer</td>
-            <td>78</td>
-            <td>Asshai</td>
-            <td>2017-01-09</td>
-          </tr>
-          <tr>
-            <td>Harren Botley</td>
-            <td>Freelancer</td>
-            <td>46</td>
-            <td>Vaes Dothrak</td>
-            <td>2017-01-10</td>
-          </tr>
-          <tr>
-            <td>Lucas Codd</td>
-            <td>King</td>
-            <td>85</td>
-            <td>Qohor</td>
-            <td>2017-01-09</td>
-          </tr>
-          <tr>
-            <td>Sarya Whent</td>
-            <td>Royal</td>
-            <td>5</td>
-            <td>Asshai</td>
-            <td>2017-01-10</td>
-          </tr>
-          <tr>
-            <td>Gyldayn</td>
-            <td>Freelancer</td>
-            <td>43</td>
-            <td>King's Landing</td>
-            <td>2017-01-08</td>
-          </tr>
-          <tr>
-            <td>Harmond Umber</td>
-            <td>Royal</td>
-            <td>28</td>
-            <td>Norvos</td>
-            <td>2017-01-08</td>
-          </tr>
-          <tr>
-            <td>Helman Tallhart</td>
-            <td>Royal</td>
-            <td>29</td>
-            <td>White Harbor</td>
-            <td>2017-01-07</td>
-          </tr>
-          <tr>
-            <td>Sybelle Glover</td>
-            <td>Freelancer</td>
-            <td>17</td>
-            <td>Chroyane</td>
-            <td>2017-01-10</td>
-          </tr>
-          <tr>
-            <td>Selyse Florent</td>
-            <td>Royal</td>
-            <td>13</td>
-            <td>Ar Noy</td>
-            <td>2017-01-11</td>
-          </tr>
-          <tr>
-            <td>Rhaenys Targaryen</td>
-            <td>Freelancer</td>
-            <td>75</td>
-            <td>Sunspear</td>
-            <td>2017-01-05</td>
-          </tr>
-          <tr>
-            <td>Willis Wode</td>
-            <td>Royal</td>
-            <td>62</td>
-            <td>Asshai</td>
-            <td>2017-01-11</td>
-          </tr>
-          <tr>
-            <td>
-              <input name='name' placeholder='Name' type='text'>
-            </td>
-            <td>
-              <select name='category'>
-                <option value='Royal'>Royal</option>
-                <option value='Freelancer'>Freelancer</option>
-                <option value='Warrior'>Warrior</option>
-                <option value='King'>King</option>
-              </select>
-            </td>
-            <td>
-              <input min='1' name='amount' type='number' value='1'>
-            </td>
-            <td>
-              <input name='location' placeholder='Location' type='text'>
-            </td>
-            <td>
-              <input name='date' type='date' value='2017-01-11'>
-            </td>
-          </tr>
-          <tr>
-            <td colspan=5>
-              <input type='submit'>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Location</th>
+              <th>Purchase Date</th>
+            </tr>
+            <tr>
+              <td>
+                <input name='name' placeholder='Name' type='text'>
+              </td>
+              <td>
+                <select name='category'>
+                  <option value='Royal'>Royal</option>
+                  <option value='Freelancer'>Freelancer</option>
+                  <option value='Warrior'>Warrior</option>
+                  <option value='King'>King</option>
+                </select>
+              </td>
+              <td>
+                <input min='1' name='amount' type='number' value='1'>
+              </td>
+              <td>
+                <input name='location' placeholder='Location' type='text'>
+              </td>
+              <td>
+                <input name='date' type='date' value='2017-01-11'>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=5>
+                <input type='submit' value='Add Entry'>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Helicent Uffering</td>
+              <td>Warrior</td>
+              <td>5</td>
+              <td>Volantis</td>
+              <td>2017-01-07</td>
+            </tr>
+            <tr>
+              <td>Baelor Blacktyde</td>
+              <td>Warrior</td>
+              <td>16</td>
+              <td>Chroyane</td>
+              <td>2017-01-04</td>
+            </tr>
+            <tr>
+              <td>Addison Hill</td>
+              <td>Royal</td>
+              <td>70</td>
+              <td>Meereen</td>
+              <td>2017-01-09</td>
+            </tr>
+            <tr>
+              <td>Elmar Frey</td>
+              <td>Freelancer</td>
+              <td>61</td>
+              <td>Tolos</td>
+              <td>2017-01-09</td>
+            </tr>
+            <tr>
+              <td>Rhaegar Targaryen</td>
+              <td>King</td>
+              <td>5</td>
+              <td>Qohor</td>
+              <td>2017-01-06</td>
+            </tr>
+            <tr>
+              <td>Ocley</td>
+              <td>Royal</td>
+              <td>76</td>
+              <td>White Harbor</td>
+              <td>2017-01-10</td>
+            </tr>
+            <tr>
+              <td>Hibald</td>
+              <td>King</td>
+              <td>37</td>
+              <td>New Ghis</td>
+              <td>2017-01-07</td>
+            </tr>
+            <tr>
+              <td>Alesander Torrent</td>
+              <td>King</td>
+              <td>73</td>
+              <td>New Ghis</td>
+              <td>2017-01-04</td>
+            </tr>
+            <tr>
+              <td>Daenerys Targaryen</td>
+              <td>Freelancer</td>
+              <td>13</td>
+              <td>Oldtown</td>
+              <td>2017-01-09</td>
+            </tr>
+            <tr>
+              <td>Lyonel</td>
+              <td>Freelancer</td>
+              <td>78</td>
+              <td>Asshai</td>
+              <td>2017-01-09</td>
+            </tr>
+            <tr>
+              <td>Harren Botley</td>
+              <td>Freelancer</td>
+              <td>46</td>
+              <td>Vaes Dothrak</td>
+              <td>2017-01-10</td>
+            </tr>
+            <tr>
+              <td>Lucas Codd</td>
+              <td>King</td>
+              <td>85</td>
+              <td>Qohor</td>
+              <td>2017-01-09</td>
+            </tr>
+            <tr>
+              <td>Sarya Whent</td>
+              <td>Royal</td>
+              <td>5</td>
+              <td>Asshai</td>
+              <td>2017-01-10</td>
+            </tr>
+            <tr>
+              <td>Gyldayn</td>
+              <td>Freelancer</td>
+              <td>43</td>
+              <td>King's Landing</td>
+              <td>2017-01-08</td>
+            </tr>
+            <tr>
+              <td>Harmond Umber</td>
+              <td>Royal</td>
+              <td>28</td>
+              <td>Norvos</td>
+              <td>2017-01-08</td>
+            </tr>
+            <tr>
+              <td>Helman Tallhart</td>
+              <td>Royal</td>
+              <td>29</td>
+              <td>White Harbor</td>
+              <td>2017-01-07</td>
+            </tr>
+            <tr>
+              <td>Sybelle Glover</td>
+              <td>Freelancer</td>
+              <td>17</td>
+              <td>Chroyane</td>
+              <td>2017-01-10</td>
+            </tr>
+            <tr>
+              <td>Selyse Florent</td>
+              <td>Royal</td>
+              <td>13</td>
+              <td>Ar Noy</td>
+              <td>2017-01-11</td>
+            </tr>
+            <tr>
+              <td>Rhaenys Targaryen</td>
+              <td>Freelancer</td>
+              <td>75</td>
+              <td>Sunspear</td>
+              <td>2017-01-05</td>
+            </tr>
+            <tr>
+              <td>Willis Wode</td>
+              <td>Royal</td>
+              <td>62</td>
+              <td>Asshai</td>
+              <td>2017-01-11</td>
+            </tr>
+          </tbody>
         </table>
       </form>
     </section>
@@ -392,5 +395,6 @@
         </ul>
       </div>
     </section>
+    <script type="text/javascript" src="tableSort.js"></script>
   </body>
 </html>
