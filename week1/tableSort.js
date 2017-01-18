@@ -17,10 +17,10 @@ sortTableBy = function(index) {
     aText = a.children[index].innerHTML;
     bText = b.children[index].innerHTML;
 
-    return bText.localeCompare(aText);
+    return aText.localeCompare(bText);
   });
 
-  for (row of rows.reverse()) {
+  for (row of rows) {
     tbody.appendChild(row);
   }
 }
