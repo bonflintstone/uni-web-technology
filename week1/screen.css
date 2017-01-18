@@ -169,3 +169,8 @@ input, select {
     max-width: 20px;
   }
 }
+
+.piechart {
+  height: 400px;
+  margin: 5px;
+}
