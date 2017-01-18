@@ -19,14 +19,36 @@ loadTable = function(){
     if(request.readyState == 4 && request.status == 200){
       items = JSON.parse(request.responseText);
         for(item of items){
-          for (var key in item) {
-            alert(key);
-          }
+          tdName = document.createElement('td');
+          textName = document.createTextNode(item.name);
+          tdName.appendChild(textName);
 
+          tdCategory = document.createElement('td');
+          textCategory = document.createTextNode(item.category);
+          tdCategory.appendChild(textCategory);
 
+          tdAmount = document.createElement('td');
+          textAmount = document.createTextNode(item.amount);
+          tdAmount.appendChild(textAmount);
+
+          tdLocation = document.createElement('td');
+          textLocation = document.createTextNode(item.location);
+          tdLocation.appendChild(textLocation);
+
+          tdDate = document.createElement('td');
+          textDate = document.createTextNode(item.date);
+          tdDate.appendChild(textDate);
+
+          tr = document.createElement('tr')
+          tr.appendChild(tdName);
+          tr.appendChild(tdCategory);
+          tr.appendChild(tdAmount);
+          tr.appendChild(tdLocation);
+          tr.appendChild(tdDate);
+
+          table = document.querySelector('#myTable tbody');
+          table.appendChild(tr);
         }
-
-      console.log(items);
     }
   }
 
