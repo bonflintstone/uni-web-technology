@@ -31,7 +31,7 @@
     </figure>
     <section id='product-table'>
       <h1>First things first.</h1>
-      <form action='http://wt.ops.few.vu.nl/api/bea6ee38' method='post'>
+      <form id="add-form">
         <table id="myTable">
           <caption>Product Table</caption>
           <thead>
@@ -66,7 +66,7 @@
             </tr>
             <tr>
               <td colspan=3>
-                <input type='submit' value='Add Entry'>
+                <button type='submit'>Add Entry</button>
               </td>
               <td colspan=2>
                 <button id='reset-button'>Reset Database</button>
@@ -77,6 +77,7 @@
           </tbody>
         </table>
       </form>
+      <h3 class="center">Amount of products in stock</h3>
       <div id="piechart" class="piechart"></div>
     </section>
 

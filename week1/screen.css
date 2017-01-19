@@ -113,15 +113,6 @@ ul {
   list-style-image: url("https://upload.wikimedia.org/wikipedia/commons/2/21/Solid_black.svg");
 }
 
-th {
-  text-align: center;
-  font-variant: small-caps;
-}
-
-#product-table th {
-  cursor: pointer;
-}
-
 .items {
   display: flex;
   flex-wrap: wrap;
@@ -153,6 +144,23 @@ td, th {
   padding: 3px;
 }
 
+th {
+  text-align: center;
+  font-variant: small-caps;
+}
+
+#product-table th {
+  cursor: pointer;
+}
+
+#product-table th.sort:before {
+  content: '▼';
+}
+
+#product-table th.reverse:before {
+  content: '▲';
+}
+
 input, select {
   width: calc(100% - 5px);
 }
@@ -171,6 +179,7 @@ input, select {
 }
 
 .piechart {
-  height: 400px;
-  margin: 5px;
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
 }

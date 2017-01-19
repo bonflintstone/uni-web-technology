@@ -8,13 +8,12 @@ function drawChart() {
     })
   ));
 
-  console.log(data);
-
   var options = {
-    title: 'Amount in Stock',
     legend: 'none',
     pieSliceText: 'label',
-    sliceVisibilityThreshold: 0.05
+    sliceVisibilityThreshold: 0.05,
+    backgroundColor: { fill: 'transparent' },
+    titlePosition: 'none'
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));

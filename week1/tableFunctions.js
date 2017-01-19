@@ -4,39 +4,65 @@ document.getElementById("reset-button").addEventListener('click', function(event
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function() {
-    if (request.readyState == 4 && request.status != 200) {
-      alert("Sorry this did not work");
+    if (request.readyState == 4 && request.status == 200) {
+      document.querySelector('#myTable tbody').innerHTML = "";
+      loadTable();
     }
   }
   request.open("GET", "http://wt.ops.few.vu.nl/api/bea6ee38/reset", true);
   request.send(null);
 });
 
-loadTable = function(){
+document.getElementById("add-form").addEventListener('submit', function(event) {
+  event.preventDefault();
+
   var request = new XMLHttpRequest();
 
-  request.onreadystatechange = function(){
-    if(request.readyState != 4 || request.status != 200){
-      return;
-    }
-
-    table = document.querySelector('#myTable tbody') ;
-
-    for(item of JSON.parse(request.responseText)){
-      tr = document.createElement('tr');
-
-      ['name', 'category', 'amount', 'location', 'date'].map(function(attr){
-        text = document.createTextNode(item[attr]);
-        td = document.createElement('td');
-        td.appendChild(text);
-        tr.appendChild(td);
-      });
-
-      table.appendChild(tr);
+  request.onreadystatechange = function() {
+    if(request.readyState == 4 && request.status == 201) {
+      loadTable(JSON.parse(request.responseText).URI);
     }
   }
 
-  request.open("GET", "http://wt.ops.few.vu.nl/api/bea6ee38", true);
+  var data = [].reduce.call(this.querySelectorAll('input, select'), function(a, c) {
+    a[c.name] = c.value; return a;
+  }, {})
+
+  request.open('post', 'http://wt.ops.few.vu.nl/api/bea6ee38', true);
+  request.setRequestHeader("Content-Type", "application/json");
+  request.send(JSON.stringify(data));
+});
+
+var tdWithTextNode = function(textNode) {
+  return document.createElement('td').appendChild(textNode).parentNode;
+}
+
+var addToTable = function(rowData) {
+  tr = document.createElement('tr');
+
+  ['name', 'category', 'amount', 'location', 'date']
+    .map(function(attr) { return rowData[attr] })
+    .map(document.createTextNode.bind(document))
+    .map(tdWithTextNode)
+    .map(tr.appendChild.bind(tr));
+
+  document.querySelector('#myTable tbody').appendChild(tr);
+
+  sortTable();
+}
+
+var loadTable = function(url) {
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function() {
+    if(request.readyState == 4 && request.status == 200) {
+      response = JSON.parse(request.responseText);
+
+      (Array.isArray(response) ? response : [response]).map(addToTable);
+    }
+  }
+
+  request.open("GET", url || "http://wt.ops.few.vu.nl/api/bea6ee38", true);
   request.send(null);
 };
 
