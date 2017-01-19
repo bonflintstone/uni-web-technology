@@ -16,39 +16,23 @@ loadTable = function(){
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function(){
-    if(request.readyState == 4 && request.status == 200){
-      items = JSON.parse(request.responseText);
-        for(item of items){
-          tdName = document.createElement('td');
-          textName = document.createTextNode(item.name);
-          tdName.appendChild(textName);
+    if(request.readyState != 4 || request.status != 200){
+      return;
+    }
 
-          tdCategory = document.createElement('td');
-          textCategory = document.createTextNode(item.category);
-          tdCategory.appendChild(textCategory);
+    table = document.querySelector('#myTable tbody') ;
 
-          tdAmount = document.createElement('td');
-          textAmount = document.createTextNode(item.amount);
-          tdAmount.appendChild(textAmount);
+    for(item of JSON.parse(request.responseText)){
+      tr = document.createElement('tr');
 
-          tdLocation = document.createElement('td');
-          textLocation = document.createTextNode(item.location);
-          tdLocation.appendChild(textLocation);
+      ['name', 'category', 'amount', 'location', 'date'].map(function(attr){
+        text = document.createTextNode(item[attr]);
+        td = document.createElement('td');
+        td.appendChild(text);
+        tr.appendChild(td);
+      });
 
-          tdDate = document.createElement('td');
-          textDate = document.createTextNode(item.date);
-          tdDate.appendChild(textDate);
-
-          tr = document.createElement('tr')
-          tr.appendChild(tdName);
-          tr.appendChild(tdCategory);
-          tr.appendChild(tdAmount);
-          tr.appendChild(tdLocation);
-          tr.appendChild(tdDate);
-
-          table = document.querySelector('#myTable tbody');
-          table.appendChild(tr);
-        }
+      table.appendChild(tr);
     }
   }
 
