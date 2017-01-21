@@ -25,6 +25,10 @@ nav a {
   vertical-align: center;
 }
 
+nav a.current_page {
+  text-decoration: underline;
+}
+
 .center {
   text-align: center;
 }
