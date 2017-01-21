@@ -49,6 +49,7 @@ var addToTable = function(rowData) {
   document.querySelector('#myTable tbody').appendChild(tr);
 
   sortTable();
+  if(typeof chart !== "undefined") { redrawChart(); }
 }
 
 var loadTable = function(url) {
