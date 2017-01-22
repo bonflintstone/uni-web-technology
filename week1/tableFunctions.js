@@ -18,6 +18,7 @@ document.getElementById("reset-button").addEventListener('click', function(event
 
 document.getElementById("add-form").addEventListener('submit', function(event) {
   event.preventDefault();
+    //when submit button is clicked
 
   var request = new XMLHttpRequest();
 
@@ -26,15 +27,18 @@ document.getElementById("add-form").addEventListener('submit', function(event) {
       loadTable(JSON.parse(request.responseText).URI);
     }
   }
-
+  //quite confused
   var data = [].reduce.call(this.querySelectorAll('input, select'), function(a, c) {
     a[c.name] = c.value; return a;
   }, {})
 
+
   request.open('post', 'http://wt.ops.few.vu.nl/api/bea6ee38', true);
   request.setRequestHeader("Content-Type", "application/json");
   request.send(JSON.stringify(data));
+  // POST request to this link
 });
+
 
 var tdWithTextNode = function(textNode) {
   return document.createElement('td').appendChild(textNode).parentNode;
@@ -43,6 +47,7 @@ var tdWithTextNode = function(textNode) {
 var addToTable = function(rowData) {
   tr = document.createElement('tr');
 
+//does this create a row for each of these categories?
   ['name', 'category', 'amount', 'location', 'date']
     .map(function(attr) { return rowData[attr] })
     .map(document.createTextNode.bind(document))
@@ -53,6 +58,7 @@ var addToTable = function(rowData) {
 
   sortTable();
   if(typeof chart !== "undefined") { redrawChart(); }
+  //what does redrawChart do? can't seem to find anything on the internet
 }
 
 var loadTable = function(url) {
@@ -61,13 +67,14 @@ var loadTable = function(url) {
   request.onreadystatechange = function() {
     if(request.readyState == 4 && request.status == 200) {
       response = JSON.parse(request.responseText);
+      //parses the JSON string responseText and constructs the javascript object
 
       (Array.isArray(response) ? response : [response]).map(addToTable);
     }
   }
 
   request.open("GET", url || "http://wt.ops.few.vu.nl/api/bea6ee38", true);
-  request.send(null);
+  request.send(n  ull);
 };
 
 loadTable();
