@@ -16,7 +16,7 @@ nav {
   padding: 25px 5%;
 }
 
-nav a {
+nav a:not(.title) {
   font-size: 1.4em;
   text-decoration: none;
   font-weight: bold;
@@ -29,11 +29,8 @@ nav a.current_page {
   text-decoration: underline;
 }
 
-.center {
-  text-align: center;
-}
-
 .title {
+  text-decoration: none;
   font-size: 1.6em;
   font-style: italic;
   border: 3px solid black;
@@ -42,6 +39,10 @@ nav a.current_page {
   background-color: white;
   margin-right: 20px;
   text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
 }
 
 a:link, a:visited {

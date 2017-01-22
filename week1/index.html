@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Lab 1</title>
+    <link rel="stylesheet" type="text/css" href="screen.css">
+    <meta charset="utf-8"/>
+  <body class="wrapper change">
+    <nav>
+      <a href='index.html' class='current_page title'>
+        <span>CS 93</span>
+      </a>
+      <a href='lab1.html'>Lab 1</a>
+      <a href='lab2.html'>Lab 2</a>
+      <a href='lab3.html'>Lab 3</a>
+      <a href='lab4.html'>Lab 4</a>
+    </nav>
+    <figure>
+      <div class="header-img">
+        <blockquote cite="https://juststickers.in/wp-content/uploads/2016/05/i-love-html-badge.png">
+          <img class="center desaturate" src= "https://juststickers.in/wp-content/uploads/2016/05/i-love-html-badge.png">
+        </blockquote>
+      </div>
+      <figcaption>
+      <q><em>
+        We love
+        <strong>
+          <abbr title=" HyperText Markup Language">
+            HTML
+          </abbr>
+        </strong>
+      </em></q>
+      <p>-Frederik & Niklas </p>
+    </figcaption>
+    </figure>
+    <section id='product-table'>
+      <h1>First things first.</h1>
+      <form id="add-form">
+        <table id="myTable">
+          <caption>Product Table</caption>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Location</th>
+              <th>Purchase Date</th>
+            </tr>
+            <tr>
+              <td>
+                <input name='name' placeholder='Name' type='text'>
+              </td>
+              <td>
+                <select name='category'>
+                  <option value='Royal'>Royal</option>
+                  <option value='Freelancer'>Freelancer</option>
+                  <option value='Warrior'>Warrior</option>
+                  <option value='King'>King</option>
+                  <option value='Furniture'>Furniture</option>
+                  <option value='Fruit'>Fruit</option>
+                </select>
+              </td>
+              <td>
+                <input min='1' name='amount' type='number' value='1'>
+              </td>
+              <td>
+                <input name='location' placeholder='Location' type='text'>
+              </td>
+              <td>
+                <input name='date' type='date' value='2017-01-11'>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=3>
+                <button type='submit'>Add Entry</button>
+              </td>
+              <td colspan=2>
+                <button id='reset-button'>Reset Database</button>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </form>
+      <h3 class="center">Amount of products in stock</h3>
+      <div id="piechart" class="piechart"></div>
+    </section>
+    <section>
+      <h2>Some explanation</h2>
+      <p>
+        We understnad we got points deducted for not having the right files and splitting our content up over different html files, and that is fair enaugh. But instead of compressing all 4 labs in a single html file we created a new index file with the table and spread the rest of the questions out over lab[1-4].html again, properly linked in the navigation. I hope this works for you!
+      </p>
+    </section>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="chart.js"></script>
+    <script type="text/javascript" src="tableFunctions.js"></script>
+    <script type="text/javascript" src="tableSort.js"></script>
+  </body>
+</html>

@@ -7,7 +7,9 @@
     <meta charset="utf-8"/>
   <body class="wrapper change">
     <nav>
-      <span class="title">CS 93</span>
+      <a href='index.html' class='title'>
+        <span>CS 93</span>
+      </a>
       <a href='lab1.html' class='current_page'>Lab 1</a>
       <a href='lab2.html'>Lab 2</a>
       <a href='lab3.html'>Lab 3</a>
@@ -31,60 +33,6 @@
       <p>-Frederik & Niklas </p>
     </figcaption>
     </figure>
-    <section id='product-table'>
-      <h1>First things first.</h1>
-      <form id="add-form">
-        <table id="myTable">
-          <caption>Product Table</caption>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Amount</th>
-              <th>Location</th>
-              <th>Purchase Date</th>
-            </tr>
-            <tr>
-              <td>
-                <input name='name' placeholder='Name' type='text'>
-              </td>
-              <td>
-                <select name='category'>
-                  <option value='Royal'>Royal</option>
-                  <option value='Freelancer'>Freelancer</option>
-                  <option value='Warrior'>Warrior</option>
-                  <option value='King'>King</option>
-                  <option value='Furniture'>Furniture</option>
-                  <option value='Fruit'>Fruit</option>
-                </select>
-              </td>
-              <td>
-                <input min='1' name='amount' type='number' value='1'>
-              </td>
-              <td>
-                <input name='location' placeholder='Location' type='text'>
-              </td>
-              <td>
-                <input name='date' type='date' value='2017-01-11'>
-              </td>
-            </tr>
-            <tr>
-              <td colspan=3>
-                <button type='submit'>Add Entry</button>
-              </td>
-              <td colspan=2>
-                <button id='reset-button'>Reset Database</button>
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </form>
-      <h3 class="center">Amount of products in stock</h3>
-      <div id="piechart" class="piechart"></div>
-    </section>
-
     <h1 id='questions'>Questions</h1>
     <section id='question1'>
       <h2>Question 1</h2>
@@ -264,9 +212,5 @@
         </ul>
       </div>
     </section>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="chart.js"></script>
-    <script type="text/javascript" src="tableFunctions.js"></script>
-    <script type="text/javascript" src="tableSort.js"></script>
   </body>
 </html>
