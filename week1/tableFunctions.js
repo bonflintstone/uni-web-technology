@@ -1,3 +1,6 @@
+//This function sets a GET request to a specific URL in order the reset the database
+//The functionality is implented through a reset button
+
 document.getElementById("reset-button").addEventListener('click', function(event) {
   event.preventDefault();
 
