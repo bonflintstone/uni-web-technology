@@ -1,5 +1,5 @@
-//This function sets a GET request to a specific URL in order the reset the database
-//The functionality is implented through a reset button
+// This function sets a GET request to a specific URL in order the reset the database
+// The functionality is implented through a reset button
 
 document.getElementById("reset-button").addEventListener('click', function(event) {
   event.preventDefault();
@@ -18,7 +18,7 @@ document.getElementById("reset-button").addEventListener('click', function(event
 
 document.getElementById("add-form").addEventListener('submit', function(event) {
   event.preventDefault();
-    //when submit button is clicked
+  // when submit button is clicked
 
   var request = new XMLHttpRequest();
 
@@ -27,7 +27,9 @@ document.getElementById("add-form").addEventListener('submit', function(event) {
       loadTable(JSON.parse(request.responseText).URI);
     }
   }
-  //quite confused
+
+  // Getting the value from all input and select elements and storing them with the
+  // name and value as key-value elements in an object
   var data = [].reduce.call(this.querySelectorAll('input, select'), function(a, c) {
     a[c.name] = c.value; return a;
   }, {})
@@ -36,7 +38,7 @@ document.getElementById("add-form").addEventListener('submit', function(event) {
   request.open('post', 'http://wt.ops.few.vu.nl/api/bea6ee38', true);
   request.setRequestHeader("Content-Type", "application/json");
   request.send(JSON.stringify(data));
-  // POST request to this link
+  // POST request with form data to this link
 });
 
 
@@ -47,7 +49,8 @@ var tdWithTextNode = function(textNode) {
 var addToTable = function(rowData) {
   tr = document.createElement('tr');
 
-//does this create a row for each of these categories?
+  // Maps the data from the json object to td elements in the order of
+  // the elements below. These td elements get added to the tr
   ['name', 'category', 'amount', 'location', 'date']
     .map(function(attr) { return rowData[attr] })
     .map(document.createTextNode.bind(document))
@@ -56,18 +59,20 @@ var addToTable = function(rowData) {
 
   document.querySelector('#myTable tbody').appendChild(tr);
 
+  // updates the table sorting and google chart
   sortTable();
   if(typeof chart !== "undefined") { redrawChart(); }
-  //what does redrawChart do? can't seem to find anything on the internet
 }
 
+// requests the json object containing all the rows or only a single row
+// and adds them to the table.
 var loadTable = function(url) {
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function() {
     if(request.readyState == 4 && request.status == 200) {
-      response = JSON.parse(request.responseText);
       //parses the JSON string responseText and constructs the javascript object
+      response = JSON.parse(request.responseText);
 
       (Array.isArray(response) ? response : [response]).map(addToTable);
     }
@@ -77,4 +82,5 @@ var loadTable = function(url) {
   request.send(n  ull);
 };
 
+// initializing the table with data from the server
 loadTable();
