@@ -4,7 +4,6 @@
   <head>
     <title>Lab 1</title>
     <link rel="stylesheet" type="text/css" href="screen.css">
-    <script type="text/javascript" src="scriptFunctions.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous">
@@ -31,29 +30,38 @@
     </section>
     <section id="question2">
       <h2>Question 2</h2>
-      <button type="button" onclick="changeBackgroundColor()">
-        Set background color
-      </button>
-      <p></p>
-      <a onclick="preventDefaultWebsite()" href="https://www.google.nl/?gfe_rd=cr&ei=wPR8WIHvFaLc8AfM2LrABg">Google</a>
+      <button type="button" onclick="changeBackgroundColor()">Set background color</button>
+      <br>
+      <a id='prevent-default' href="https://google.nl">Google</a>
     </section>
     <section id="question3">
       <h2>Question 3</h2>
+      <a id='prevent-default-query' href="https://google.nl">Google</a>
+      <p>
+        The difference in the approach lays in two parts: Selecting the element and adding the action listener. The syntax for both is way shorter in jquery, but in that it is also lest volatile, abstracting away more of the details of how it works. While in the vanilla js version we explicitely state that we select by id, in jquery we use the # as a symbol for this (this would also be possible in pure js with the querySelector function. And instead of explicitely stating that we add an action listener for a certain action ('click'), we just give a function to what should happen on a click in jquery.
+      </p>
+      <p>
+        I dont think one is neccessarily better than the other, because while the vanilla js solution is longer it also yields more understanding about what is happening, and it is not too bad to read. The true difference herein for me lies in the importing of a huge 3rd party library for and easy task, which has load time, security and other implications. It also means that the name space for functions and variables is more flooded, which when including many 3rd party libraries can lead to many hard to debug problems.
+      </p>
+      <p>
+        In general the tendency of the industry is to go away from jquery, as javascript has evolved to a point where it is easy enough to use that we dont need it anymore. I personally consider that a good thing.
+      </p>
     </section>
     <section id="question4">
       <h2>Question 4</h2>
       <div>
         <p class="center"> A Comparison of Java and javaScript</p>
         <dl>
-          <dt> Similarities </dt>
-          <dd> Both are object oriented</dd>
-          <dd> Both have libraries and frameworks</dd>
-          <dt> Differences</dt>
-          <dd> There are no classes in javascript</dd>
-          <dd> Java is compiled;whereas, javascript is interpreted</dd>
+          <dt>Similarities </dt>
+          <dd>Both are object oriented</dd>
+          <dd>Both have libraries and frameworks</dd>
+          <dt>Differences</dt>
+          <dd>There are no classes in javascript (before ES6)</dd>
+          <dd>Javascript has functions as first class citizens</dd>
+          <dd>Java is compiled; whereas, javascript is interpreted</dd>
           <dd>
             Java creates applications that run on virtual machines or browsers,
-            while, javascript code is run in browsers only
+            while javascript code is run in browsers only or serverside as eg. node.js
           </dd>
         </dl>
       </div>
@@ -61,7 +69,11 @@
     <section id="question5">
       <h2>Question 5</h2>
       <p>AJAX stands for Asynchronous JavaScript and XML</p>
-      <p>The role of the A means that the script will send a request to the server, and continue it's execution without waiting for the reply.</p>
+      <p>
+        Asynchronus here means that the script will send a request to the server, and
+        continue it's execution without waiting for the reply. The reply will be
+        processed in a seperate thread whenever it returns
+      </p>
     </section>
     <section id='question6'>
       <h2>Question 6</h2>
@@ -84,14 +96,22 @@
     <section id='question8'>
       <h2>Question 8</h2>
       <p>
-        Events are ‘things’ that happen to an html document and the event can be fired by using an event listener such as clicking a button. In other, words, events and event listeners define which javascript functions need to be called when.
+        Events are ‘things’ that happen to an html document and the event can be fired
+        by eg. a user interactions as clicking a button and will be processed using an
+        event listener. In other words, events and event listeners define which
+        javascript functions need to be called when.
       </p>
     </section>
     <section id='question9'>
       <h2>Question 9</h2>
       <p>
-        Autocomplete aims to match user requests by using google’s enormous library “places”. Autocomplete objects are bound to the map to only show results within the visible boundaries of the map. Then an event listener in the autocomplete object is used to listen for changes in selection, in order to match those changes in requests.
+        Autocomplete aims to match user requests by using google’s enormous library
+        “places”. Autocomplete objects are bound to the map to only show results
+        within the visible boundaries of the map. Then an event listener in the
+        autocomplete object is used to listen for changes in selection, in order to
+        match those changes in requests.
       </p>
     </section>
+    <script type="text/javascript" src="scriptFunctions.js"></script>
   </body>
 </html>

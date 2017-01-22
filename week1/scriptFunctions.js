@@ -2,8 +2,14 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = "red";
 }
 
-function preventDefaultWebsite() {
-  document.addEventListener("click", function(event) {
+function preventDefaults() {
+  document.getElementById('prevent-default').addEventListener("click", function(event) {
+    event.preventDefault();
+  });
+
+  $('#prevent-default-query').click(function(event) {
     event.preventDefault();
   });
 }
+
+preventDefaults();
