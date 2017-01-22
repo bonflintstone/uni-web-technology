@@ -38,13 +38,30 @@
       <h2>Question 3</h2>
       <a id='prevent-default-query' href="https://google.nl">Google</a>
       <p>
-        The difference in the approach lays in two parts: Selecting the element and adding the action listener. The syntax for both is way shorter in jquery, but in that it is also lest volatile, abstracting away more of the details of how it works. While in the vanilla js version we explicitely state that we select by id, in jquery we use the # as a symbol for this (this would also be possible in pure js with the querySelector function. And instead of explicitely stating that we add an action listener for a certain action ('click'), we just give a function to what should happen on a click in jquery.
+        The difference in the approach lays in two parts: Selecting the element
+        and adding the action listener. The syntax for both is way shorter in
+        jquery, but in that it is also lest volatile, abstracting away more of
+        the details of how it works. While in the vanilla js version we
+        explicitely state that we select by id, in jquery we use the # as a
+        symbol for this (this would also be possible in pure js with the
+        querySelector function. And instead of explicitely stating that we add an
+        action listener for a certain action ('click'), we just give a function
+        to what should happen on a click in jquery.
       </p>
       <p>
-        I dont think one is neccessarily better than the other, because while the vanilla js solution is longer it also yields more understanding about what is happening, and it is not too bad to read. The true difference herein for me lies in the importing of a huge 3rd party library for and easy task, which has load time, security and other implications. It also means that the name space for functions and variables is more flooded, which when including many 3rd party libraries can lead to many hard to debug problems.
+        I dont think one is neccessarily better than the other, because while the
+        vanilla js solution is longer it also yields more understanding about
+        what is happening, and it is not too bad to read. The true difference
+        herein for me lies in the importing of a huge 3rd party library for and
+        easy task, which has load time, security and other implications. It also
+        means that the name space for functions and variables is more flooded,
+        which when including many 3rd party libraries can lead to many hard to
+        debug problems.
       </p>
       <p>
-        In general the tendency of the industry is to go away from jquery, as javascript has evolved to a point where it is easy enough to use that we dont need it anymore. I personally consider that a good thing.
+        In general the tendency of the industry is to go away from jquery, as
+        javascript has evolved to a point where it is easy enough to use that we
+        dont need it anymore. I personally consider that a good thing.
       </p>
     </section>
     <section id="question4">
@@ -82,6 +99,14 @@
         script is executed to the JavaScript. Two often used host
         objects are window and document.
       </p>
+      <p>
+        In java and some other programming languages there is no need for any
+        host objects, as there are mainly used either for interacting with the
+        DOM (which is unique to js) or to scope global variables, and scoping and
+        namespaces work way differently in java (and agains different inother
+        languages).
+      <p>
+      </p>
     </section>
     <section id='question7'>
       <h2>Question 7</h2>
@@ -110,6 +135,16 @@
         within the visible boundaries of the map. Then an event listener in the
         autocomplete object is used to listen for changes in selection, in order to
         match those changes in requests.
+      </p>
+    </section>
+    <section id='bonus-question'>
+      <h2>Bonus</h2>
+      <p>
+        The like button works by sideloading a script from facebook which will
+        load the content neccessary to create the like button in a dedicated div,
+        and the open graph protocol works by including different mate tags in the
+        head of the html with content describing the website and a unique id
+        which is used by facebook to differentiate between the websites.
       </p>
     </section>
     <script type="text/javascript" src="scriptFunctions.js"></script>
