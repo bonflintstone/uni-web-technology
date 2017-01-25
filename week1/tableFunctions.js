@@ -79,7 +79,7 @@ var loadTable = function(url) {
   }
 
   request.open("GET", url || "http://wt.ops.few.vu.nl/api/bea6ee38", true);
-  request.send(n  ull);
+  request.send(null);
 };
 
 // initializing the table with data from the server

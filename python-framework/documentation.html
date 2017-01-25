@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Documentation API</h1>
+    <div class='endpoint'>
+      <h2>GET /items</h2>
+      <p>Returns a list containing a json object with all the items</p>
+      <h3>Parameters</h3>
+      <p>None</p>
+      <h3>Response</h3>
+      <p>The items</p>
+      <code>[{"category": "Fruit", "name": "Banana", "amount": 15, "location": "Amsterdam", "date": "2014-10-05", "id": 33498}, {"category": "Fruit", "name": "Apple", "amount": 58, "location": "Amsterdam", "date": "2014-02-05", "id": 33499}, {"category": "Furniture", "name": "Chair", "amount": 3, "location": "Hilversum", "date": "2014-12-10", "id": 33500}, {"category": "Furniture", "name": "Table", "amount": 5, "location": "Rotterdam", "date": "2011-07-13", "id": 33501}]</code>
+    </div>
+    <div class='endpoint'>
+      <h2>POST /items</h2>
+      <p>Creates a new item with the given data, the id is choosen incrementally and can not be set</p>
+      <h3>Parameters</h3>
+      <dl>
+        <dt>name</dt>
+        <dd>The name (a string)</dd>
+        <dt>category</dt>
+        <dd>The category (a string)</dd>
+        <dd>amount</dd>
+        <dt>The amount (a number)</dt>
+        <dd>location</dd>
+        <dt>The location (a string)</dt>
+        <dd>date</dd>
+        <dt>The date (a date formatted as "%yyyy-mm-dd"</dt>
+      </dl>
+      <h3>Response</h3>
+      <p>No content</p>
+    </div>
+    <div class='endpoint'>
+      <h2>GET /item/&lt;id></h2>
+      <p>Returns the item encoded in json with the given id</p>
+      <h3>Parameters</h3>
+      <dl>
+        <dt>ID</dt>
+        <dd>Url encoded, eg.: 33498, required</dd>
+      </dl>
+      <h3>Response</h3>
+      <p>The items, encoded in json</p>
+      <code>{"category": "Fruit", "name": "Banana", "amount": 15, "location": "Amsterdam", "date": "2014-10-05", "id": 33498}</code>
+    </div>
+    <div class='endpoint'>
+      <h2>PUT /item/&lt;id></h2>
+      <p>Updates the item with the id with the given parameters</p>
+      <h3>Parameters</h3>
+      <dl>
+        <dt>ID</dt>
+        <dd>Url encoded, eg.: 33498, required</dd>
+        <dt>category</dt>
+        <dd>JSON, eg.: "fruit", optional</dd>
+        <dt>name</dt>
+        <dd>JSON, eg.: "Banana", optional</dd>
+        <dt>amount</dt>
+        <dd>JSON, eg.: 5, optional</dd>
+        <dt>location</dt>
+        <dd>JSON, eg.: "Amsterdam", optional</dd>
+        <dt>date</dt>
+        <dd>JSON, eg.: "2015-23-23", optional</dd>
+      </dl>
+    </div>
+    <div class='endpoint'>
+      <h2>DELETE /item/&lt;id></h2>
+      <p>Deletes the items with the given id from the database</p>
+      <h3>Parameters</h3>
+      <dl>
+        <dt>ID</dt>
+        <dd>Url encoded, eg.: 33498, required</dd>
+      </dl>
+      <h3>Response</h3>
+      <p>The item, encoded in json</p>
+      <code>{"category": "Fruit", "name": "Banana", "amount": 15, "location": "Amsterdam", "date": "2014-10-05", "id": 33498}</code>
+    </div>
+  </body>
+</html>
