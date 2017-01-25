@@ -7,11 +7,11 @@ def items(db):
     names = db.fetchall()
     return json.dumps(names)
 
-@get('/items/<ROWID>')
-def getOne(db):
-  db.execute("SELECT * FROM items WHERE rowid")
+@get('/items/<rowid>')
+def getOne(db, rowid=0):
+  db.execute('SELECT * FROM items WHERE rowid=?', rowid)
   name = db.fetchone()
-  return json.dumps(names)
+  return json.dumps(name)
 	
 
 @error(404)
