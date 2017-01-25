@@ -7,6 +7,13 @@ def items(db):
     names = db.fetchall()
     return json.dumps(names)
 
+@get('/items/<ROWID>')
+def getOne(db):
+  db.execute("SELECT * FROM items WHERE rowid")
+  name = db.fetchone()
+  return json.dumps(names)
+	
+
 @error(404)
 def error_404_handler(e):
 
