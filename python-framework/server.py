@@ -1,4 +1,4 @@
-from bottle import response, error, get
+from bottle import response, error, get, request, post
 import json
 
 @get('/items')
@@ -12,7 +12,11 @@ def getOne(db, rowid=0):
   db.execute('SELECT * FROM items WHERE rowid=?', rowid)
   name = db.fetchone()
   return json.dumps(name)
-	
+
+@post('/item')
+def addOne(db,category, date, amount, name, location):
+  db.execute('INSERT INTO items (category, date, amount, name, location(?,?,?,?,?)',(category, date, amount, name, location))
+  db.commit()
 
 @error(404)
 def error_404_handler(e):
