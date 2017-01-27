@@ -3,7 +3,7 @@ import json
 
 @get('/items')
 def get_items(db):
-    db.execute("SELECT * FROM items")
+    db.execute("SELECT rowid, name, category, amount, date, location FROM items")
     names = db.fetchall()
     return json.dumps(names)
 
@@ -22,7 +22,10 @@ def post_items(db):
 
 @delete('/item/<rowid>')
 def delete_item(db, rowid):
+  db.execute("""SELECT * FROM items WHERE rowid=?""", rowid)
+  item = db.fetchone()
   db.execute("""DELETE FROM items WHERE rowid=?""", (rowid))
+  return item
 
 @put('/item/<rowid>')
 def put_item(db, rowid):
