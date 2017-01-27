@@ -6,12 +6,15 @@ def get_items(db):
     db.execute("SELECT * FROM items")
     names = db.fetchall()
     return json.dumps(names)
+  db.execute("SELECT rowid, name, category, amount, date, location FROM items")
+  items = json.dumps(db.fetchall())
+  return HTTPResponse(status=200, body=items)
 
-@get('/items/<rowid>')
+@get('/item/<rowid>')
 def get_item(db, rowid=0):
   db.execute('SELECT * FROM items WHERE rowid=?', rowid)
-  name = db.fetchone()
-  return json.dumps(name)
+  item = json.dumps(db.fetchone())
+  return HTTPResponse(status=200, body=item)
 
 @post('/items')
 def post_items(db):
@@ -21,11 +24,12 @@ def post_items(db):
              (item['category'], item['date'], item['amount'], item['name'],  item['location']))
   response.content_type = 'application/json'
   
-  return HTTPResponse(status = 202, body=response.content_type) 
+  return HTTPResponse(status=201, body=None)
 
 @delete('/item/<rowid>')
 def delete_item(db, rowid):
   db.execute("""DELETE FROM items WHERE rowid=?""", (rowid))
+  return HTTPResponse(status=200, body=item)
 
 @put('/item/<rowid>')
 def put_item(db, rowid):
@@ -36,11 +40,11 @@ def put_item(db, rowid):
                 category=?, date=?, amount=?, name=?, location=?
                 WHERE rowid=?""",
              (item['category'], item['date'], item['amount'], item['name'], item['location'], rowid))
+  return HTTPResponse(status=200, body=item)
 
 @error(404)
 def error_404_handler(e):
     response.content_type = 'application/json'
-
     return json.dumps({'Error': {'Message': e.status_line, 'Status': e.status_code}})
 
 if __name__ == "__main__":
