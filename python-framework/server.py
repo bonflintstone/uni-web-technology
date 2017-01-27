@@ -19,6 +19,8 @@ def insert(db):
   db.execute("""INSERT INTO items (category, date, amount, name, location)
                 VALUES (?, ?, ?, ?, ?)""",
              (item['category'], item['date'], item['amount'], item['name'],  item['location']))
+  response.content_type = 'application/json'
+  return json.dumps(response.content_type)
 
 @error(404)
 def error_404_handler(e):
