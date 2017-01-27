@@ -1,9 +1,9 @@
-from bottle import response, error, get, request, post, delete, put
+from bottle import response, error, get, request, post, delete, put, HTTPResponse
 import json
 
 @get('/items')
 def get_items(db):
-    db.execute("SELECT rowid, name, category, amount, date, location FROM items")
+    db.execute("SELECT * FROM items")
     names = db.fetchall()
     return json.dumps(names)
 
@@ -20,14 +20,12 @@ def post_items(db):
                 VALUES (?, ?, ?, ?, ?)""",
              (item['category'], item['date'], item['amount'], item['name'],  item['location']))
   response.content_type = 'application/json'
-  return json.dumps(response.content_type)
+  
+  return HTTPResponse(status = 202, body=response.content_type) 
 
 @delete('/item/<rowid>')
 def delete_item(db, rowid):
-  db.execute("""SELECT * FROM items WHERE rowid=?""", rowid)
-  item = db.fetchone()
   db.execute("""DELETE FROM items WHERE rowid=?""", (rowid))
-  return item
 
 @put('/item/<rowid>')
 def put_item(db, rowid):
