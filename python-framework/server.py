@@ -13,10 +13,12 @@ def getOne(db, rowid=0):
   name = db.fetchone()
   return json.dumps(name)
 
-@post('/item')
-def addOne(db,category, date, amount, name, location):
-  db.execute('INSERT INTO items (category, date, amount, name, location(?,?,?,?,?)',(category, date, amount, name, location))
-  db.commit()
+@post('/items')
+def insert(db):
+  item = json.load(request.body)
+  db.execute("""INSERT INTO items (category, date, amount, name, location)
+                VALUES (?, ?, ?, ?, ?)""",
+             (item['category'], item['date'], item['amount'], item['name'],  item['location']))
 
 @error(404)
 def error_404_handler(e):
