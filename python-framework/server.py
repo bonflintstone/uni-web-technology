@@ -3,16 +3,16 @@ import json
 
 @get('/items')
 def get_items(db):
-  db.execute('SELECT * FROM items')
+  db.execute('SELECT rowid, category, date, amount, name, location FROM items')
   items = json.dumps(db.fetchall())
   return createResponse(200, items)
 
 @get('/item/<rowid>')
 def get_item(db, rowid=0):
-  db.execute('SELECT * FROM items WHERE rowid=?', rowid)
+  db.execute('SELECT rowid, category, date, amount, name, location FROM items WHERE rowid=?', (rowid,))
   item = json.dumps(db.fetchone())
   if item == 'null':
-    return createResponse(404, '{error: item not found}')
+    return createResponse(404, '{"error": "item not found"}')
   return createResponse(200, item)
 
 @post('/items')
@@ -24,16 +24,17 @@ def post_items(db):
 
 @delete('/item/<rowid>')
 def delete_item(db, rowid):
-  db.execute('DELETE FROM items WHERE rowid=?', (rowid))
-  return createResponse(200, None)
+  db.execute('SELECT * FROM items WHERE rowid=?', (rowid,))
+  item = json.dumps(db.fetchone())
+  if item == 'null':
+    return createResponse(404, '{"error": "item not found"}')
+  db.execute('DELETE FROM items WHERE rowid=?', (rowid,))
+  return createResponse(200, item)
 
 @put('/item/<rowid>')
 def put_item(db, rowid):
-  db.execute('SELECT * FROM items WHERE rowid=?', rowid)
-  item = db.fetchone()
-  item.update(json.load(request.body))
   db.execute('UPDATE items SET category=?, date=?, amount=?, name=?, location=?  WHERE rowid=?',
-             (item['category'], item['date'], item['amount'], item['name'], item['location'], rowid))
+             (item['category'], item['date'], item['amount'], item['name'], item['location'], rowid,))
   return createResponse(200, item)
 
 def createResponse(status, body):
