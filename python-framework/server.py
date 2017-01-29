@@ -5,25 +5,15 @@ import json
 def get_items(db):
   db.execute('SELECT * FROM items')
   items = json.dumps(db.fetchall())
-<<<<<<< HEAD
-  response.content_type = 'application/json' # response.content_type instead
-  return HTTPResponse(status=200, body=items)
-=======
   return createResponse(200, items)
->>>>>>> 31ed74ecaebf49993b5604cdc5322fdca6699964
 
 @get('/item/<rowid>')
 def get_item(db, rowid=0):
   db.execute('SELECT * FROM items WHERE rowid=?', rowid)
   item = json.dumps(db.fetchone())
-<<<<<<< HEAD
-  response.content_type = 'application/json charset=utf-8' # code after return will not get exectuted
-  return HTTPResponse(status=200, body=item)
-=======
   if item == 'null':
     return createResponse(404, '{error: item not found}')
   return createResponse(200, item)
->>>>>>> 31ed74ecaebf49993b5604cdc5322fdca6699964
 
 @post('/items')
 def post_items(db):
