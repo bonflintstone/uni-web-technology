@@ -3,17 +3,17 @@ import json
 
 @get('/items')
 def get_items(db):
-    db.execute("SELECT * FROM items")
-    items = json.dumps(db.fetchall())
-    HTTPResponse.content_type = 'application/json'
-    return HTTPResponse(status=200, body=items)
+  db.execute("SELECT * FROM items")
+  items = json.dumps(db.fetchall())
+  HTTPResponse.content_type = 'application/json' # response.content_type instead
+  return HTTPResponse(status=200, body=items)
 
 @get('/item/<rowid>')
 def get_item(db, rowid=0):
   db.execute('SELECT * FROM items WHERE rowid=?', rowid)
   item = json.dumps(db.fetchone())
   return HTTPResponse(status=200, body=item)
-  response.content_type = 'application/json charset=utf-8'
+  response.content_type = 'application/json charset=utf-8' # code after return will not get exectuted
 
 @post('/items')
 def post_items(db):
@@ -21,12 +21,13 @@ def post_items(db):
   db.execute("""INSERT INTO items (category, date, amount, name, location)
                 VALUES (?, ?, ?, ?, ?)""",
              (item['category'], item['date'], item['amount'], item['name'],  item['location']))
+  # content_type -> blank
   return HTTPResponse(status=201, body=None)
 
 @delete('/item/<rowid>')
 def delete_item(db, rowid):
   db.execute("""DELETE FROM items WHERE rowid=?""", (rowid))
-  response.content_type = 'application/json'
+  response.content_type = 'application/json' # this is the way to go
   return json.dumps({'Success': {'Message':200, 'Status': Request is ok}})
 
 @put('/item/<rowid>')
