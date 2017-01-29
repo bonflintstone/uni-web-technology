@@ -616,6 +616,121 @@
         <li>Precision would stay the same but recall would go up</li>
       </p>
     </section>
+    <h2 id='lab5'>Lab 5</h2>
+    <section>
+      <h3>Question 1</h3>
+      <p>
+        Make sure you have read the blog post What Is A Web Server? as
+        described in the Week 2: Reader on Blackboard. Knupp states that the
+        GET method is the most common HTTP method. He does not discuss that the
+        HTTP GET method is assumed to be idempotent. Explain
+      </p>
+      <dl>
+        <dt>what idempotent means in this context</dt>
+        <dd>That whenever an HTTP GET request is executed, it stays the same</dd>
+        <dt>how idempotent requests simplify the implementation of a caching HTTP proxy</dt>
+        <dd>Since the request is the same every time, the results can easily be cached</dd>
+        <dt>how so-called "visitor counters" often break this assumption, and</dt>
+        <dd>how such counters might be negatively affected by proxies.<dt>
+        <dt>
+          Because a hit on the proxy never arrives the actual web server the counter
+          will not work correct (except if done via ajax separately)
+        </dt>
+      </dl>
+    </section>
+    <section>
+        <h3>Question 2</h3>
+        <p>
+          This means that HTTP does not maintain state or in other words that each command is executed independently without any knowledge of the commands that came before it. This in turn, make HTTP a relatively simple protocol to implement; however, it makes it more difficult to implement web sites that react intelligently to use input.
+        </p>
+    </section>
+    <section>
+        <h3>Question 3</h3>
+        <p>Since, HTTP does not maintain state, it is difficult to track user behavior such as shopping patterns. Without cookies, the shopping basket would refresh every time the user would refresh the page, rendering the shopping basket useless. Therefore, cookies are required to maintain state about the users shopping desires.</p>
+    </section>
+    <section>
+        <h3>Question 4</h3>
+        <p>
+          The response to the request can be found under a different URI and should be retrieved using a GET method on that resource.
+          https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+        </p>
+    </section>
+    <section>
+        <h3>Question 5</h3>
+        <ul>
+          <li>https://developer.spotify.com/web-api/get-album/</li>
+          <li>https://dev.twitter.com/rest/reference/get/statuses/user_timeline</li>
+          <li>Both document the three key ingredients of a REST resource:</li>
+          <li>The endpoint of the resource, including the full URL and the parameters that can be used</li>
+          <li>The HTTP method that may be applied to the resource, e.g. GET, POST, HEAD, etc.</li>
+          <li>The response format in which the resource will be served, e.g. in JSON, XML, CSV, etc.</li>
+        </ul>
+    </section>
+    <section>
+      <h3>Question 6</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>A path to a service with an http method that can be accessed by a client application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTTP method</td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td>Response format</td>
+            <td>Returns object in JSON format</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td>Successful request</td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Bad request</td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td>Not found</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+        <h3>Question 8</h3>
+    </section>
+    <section>
+        <h3>Question 9</h3>
+          <p>The content type is JSON.</p>
+    </section>
+    <h2 id='lab6'>Lab 6</h2>
+    <section>
+        <h3>Question 1</h3>
+          <p>There are several negative aspects of web-based social interaction such as discrimination such as discrimination, trolls, and hate languages. I believe its difficult to neglect part of a topic just because it has negative attribute, therefore, I believe that this should be included in web-science. However, I do believe that research from other fields can be derived in order to increase understanding in the field of web science.</p>
+    </section>
+    <section>
+        <h3>Question 2</h3>
+          <p>Long tail refers to something that has a low demand. Long tail can be profitable in online shops because you don’t retain the same costs as a traditional brick-and-mortor shop.</p>
+    </section>
+    <section>
+        <h3>Question 3</h3>
+          <p>Government data plays a huge role in a transparent government as it allows to citizens to observe how the country is doing.</p>
+    </section>
+    <section>
+        <h3>Question 4</h3>
+          <p>I would say some are still relevant; however, far less. Well, I don’t know to what extent it affects usability, but I don’t like cookies as I believe it is an infringement on my privacy; however, I’m unable to use such sites if I’m not enabling cookies.</p>
+    </section>
+    <section>
+        <h3>Question 5</h3>
+          <p>I have chosen Businessinsider, which is a business news website. To first thing is to determine the purpose of the site such as views per article. Then for example, you could experience with having different titles for for each article and maybe use different types of buzzwords and somehow be able to set how effective these words are across different articles.</p>
+    </section>
+    <section>
+        <h3>Question 7</h3>
+          <p>Common log format is basically a standardized text file format used by web servers. This makes it a lot easier to make and implement analysis software as all web servers are using the same format, meaning that web servers don’t require customized software, but can rather implement something that most people have.</p>
+    </section>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="chart.js"></script>
     <script type="text/javascript" src="tableFunctions.js"></script>
