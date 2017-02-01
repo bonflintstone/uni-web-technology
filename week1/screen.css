@@ -1,7 +1,7 @@
 body {
   padding: 100px 5% 50px;
   text-align: justify;
-  background-color: #819A9A;
+  background-color: #A2D7DB;
   font-size: 100%;
   font-family: "Comic Sans MS", arial;
 }
@@ -10,7 +10,7 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 90%;
   z-index: 1;
   background-color: #D7ECEC;
   padding: 25px 5%;
@@ -60,7 +60,7 @@ a:active {
 caption {
   caption-side: top;
   margin-bottom: 15px;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
   font-style: italic;
 }
@@ -168,10 +168,15 @@ th {
 
 input, select {
   width: calc(100% - 5px);
+  font-size: 1em;
 }
 
 .right {
   float: right;
+}
+
+button {
+  font-size: 1em;
 }
 
 @media(max-width: 750px) {
